@@ -1,0 +1,35 @@
+  DROP DATABASE IF EXISTS TodoListDB;
+
+  CREATE DATABASE TodoListDB;
+
+  USE TodoListDB;
+
+  CREATE TABLE usuarios (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nome TEXT NOT NULL,
+    senha INTEGER NOT NULL,
+    cargo TEXT
+  ) ENGINE=INNODB;
+
+  CREATE TABLE tarefas (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    titulo TEXT NOT NULL,
+    tarefa TEXT NOT NULL,
+    usuario INT NOT NULL,
+    FOREIGN KEY (usuario)
+      REFERENCES usuarios (id)
+      ON DELETE CASCADE
+  )  ENGINE=INNODB;
+
+  INSERT INTO usuarios (nome,senha,cargo)
+  VALUES
+    ('walter', 24344, 'gerente'),
+    ('peter', 15453, 'colaborador'),
+    ('lance', 29234, 'colaborador'),
+    ('freedie', 21234, 'colaborador'),
+    ('tyler', 66534, 'secretario'),
+    ('fog', 23249, 'subgerente');
+
+
+  SET SQL_SAFE_UPDATES = 0;
