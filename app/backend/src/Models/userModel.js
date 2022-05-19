@@ -46,9 +46,9 @@ const getByName = async (name) => {
 };
 
 // U
-const updade = async (nome, senha, cargo, id) => {
+const update = async (nome, senha, cargo, id) => {
   await connection.execute(
-    'UPDATE usuario SET nome=?, senha=?, cargo=? WHERE id = ? ',
+    'UPDATE usuarios SET nome=?, senha=?, cargo=? WHERE id = ? ',
     [nome, senha, cargo, id]
   );
   return {
@@ -68,5 +68,5 @@ module.exports = {
   getByName,
   create,
   remove,
-  updade
+  update
 };

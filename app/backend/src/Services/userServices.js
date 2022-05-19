@@ -38,6 +38,11 @@ const getByName = async (nome) =>{
   }
 };
 
+const update = async (nome, senha, cargo, id) => {
+  const usuarioUp = await userModel.update(nome, senha, cargo, id);
+  return usuarioUp;
+};
+
 const remove = async (id) => {
   await userModel.remove(id);
 };
@@ -47,5 +52,6 @@ module.exports = {
   getAll,
   getById,
   getByName,
+  update,
   remove,
 };

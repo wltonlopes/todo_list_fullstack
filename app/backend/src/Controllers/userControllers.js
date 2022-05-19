@@ -44,6 +44,16 @@ const getByName = async ( req, res, next) => {
   }
 };
 
+const update = async ( req, res, next) => {
+  try {
+    const { nome, senha, cargo, id } = req.body;
+    const usuarioUp = await userServices.update(nome, senha, cargo, id);
+    res.status(200).json(usuarioUp);
+  } catch (error) {
+    return next(error);
+  }
+};
+
 const remove = async ( req, res, next ) => {
   try {
     const { id }= req.body;
@@ -59,5 +69,6 @@ module.exports = {
   getAll,
   getById,
   getByName,
+  update,
   remove,
 };

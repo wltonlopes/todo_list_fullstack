@@ -17,6 +17,8 @@ app.get('/usuarios', usuariosControllers.getAll);
 
 app.post('/usuario', usuariosControllers.create);
 
+app.put('/usuario', usuariosControllers.update);
+
 app.delete('/usuario', usuariosControllers.remove);
 
 app.listen(PORT, () => {
