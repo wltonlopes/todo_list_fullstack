@@ -1,27 +1,41 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container'
+import React, { useEffect, useState } from 'react';
+import Container from 'react-bootstrap/Container';
 import CardGroup from 'react-bootstrap/CardGroup';
+import Card from 'react-bootstrap/Card';
 
-
+// import Cards from '../components/Cards';
 
 export default function MainTodo() {
+  const [ tarefas, setTarefas ] = useState([]);
+
+  useEffect(()=>{
+    fetch('http://localhost:3005/tarefas/usuario/2')
+    .then(response => response.json())
+    .then(json => setTarefas(json));
+  },[]);
+
+console.log(tarefas);
   return (
     <Container height="100hv">
     <CardGroup>
-      <Card>
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This card has even longer content than the first to
-            show that equal height action.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
+      {
+        tarefas === []? <p>carregando....</p>
+        : tarefas.map((trf) => {
+          return(
+            <Card key={trf.id}>
+              <Card.Body>
+                <Card.Title>{trf.titulo}</Card.Title>
+                <Card.Text>
+                  {trf.tarefa}
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <small className="text-muted">{trf.date}</small>
+              </Card.Footer>
+            </Card>
+          )
+        })
+      }
     </CardGroup>
     </Container>
   )

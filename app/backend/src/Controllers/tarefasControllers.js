@@ -21,7 +21,7 @@ const getAll = async ( _req, res, next) => {
 
 const getById = async ( req, res, next) => {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
     const tarefa = await tarefasServices.getById(id);
     if (tarefa === null){
       return res.status(400).json({message: 'Invalid Id'});
@@ -34,8 +34,8 @@ const getById = async ( req, res, next) => {
 
 const getByUsuario = async ( req, res, next) => {
   try {
-    const { usuario } = req.body;
-    const tarefas = await tarefasServices.getByUsuario(usuario);
+    const { id } = req.params;
+    const tarefas = await tarefasServices.getByUsuario(id);
     res.status(200).json(tarefas);
   } catch (error) {
     return next(error);

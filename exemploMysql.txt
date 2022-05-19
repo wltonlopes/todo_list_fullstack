@@ -31,5 +31,32 @@
     ('tyler', 66534, 'secretario'),
     ('fog', 23249, 'subgerente');
 
+  INSERT INTO tarefas (titulo,tarefa,usuario)
+  VALUES
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 1),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 2),
+    ('nova bateria', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 3),
+    ('nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 1),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 1),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 1),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 4),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 5),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 5),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 2),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 2),
+    ('Buscar faixas', 'Tenho que buscar novas faixas na rua x', 1),
+    ('Revisão do carro de entregas', 'Tenho que buscar novas cargas no Diadema rua x', 3),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 1),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 2),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 2),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 5),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 1),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 3),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 3),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 1),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 3),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 1),
+    ('Buscar nova carga', 'Tenho que buscar novas cargas no Tucuruvi rua x, numero x', 4);
+
 
   SET SQL_SAFE_UPDATES = 0;
