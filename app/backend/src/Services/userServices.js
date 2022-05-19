@@ -1,5 +1,16 @@
 const userModel = require('../Models/userModel');
 
+const create = async ( nome, senha, cargo ) => {
+  try {
+    console.log( nome, senha, cargo );
+    const novoUsuario = await userModel.create( nome, senha, cargo );
+    return novoUsuario;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 const getAll = async () =>{
   try {
     const usuarios = await userModel.getAll();
@@ -27,8 +38,14 @@ const getByName = async (nome) =>{
   }
 };
 
+const remove = async (id) => {
+  await userModel.remove(id);
+};
+
 module.exports = {
+  create,
   getAll,
   getById,
   getByName,
+  remove,
 };

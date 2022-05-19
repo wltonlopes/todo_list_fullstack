@@ -1,5 +1,17 @@
 const userServices = require ('../Services/userServices');
 
+const create = async (req, res, next) => {
+  try {
+    const { nome, senha, cargo } = req.body;
+    const a = req.body.nome;
+    console.log( a );
+    const novoUsuario = await userServices.create( nome, senha, cargo );
+    res.status(201).json(novoUsuario);
+  } catch (error) {
+    return next(error);
+  }
+}; 
+
 const getAll = async ( _req, res, next) => {
   try {
     const usuarios = await userServices.getAll();
@@ -32,8 +44,20 @@ const getByName = async ( req, res, next) => {
   }
 };
 
+const remove = async ( req, res, next ) => {
+  try {
+    const { id }= req.body;
+    await userServices.remove(id);
+    res.status(204).end();
+  } catch (error) {
+    return next(error);
+  }
+};
+
 module.exports = {
+  create,
   getAll,
   getById,
   getByName,
+  remove,
 };

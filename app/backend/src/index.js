@@ -8,10 +8,16 @@ const app = express();
 
 app.use(express.json());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 app.get('/usuario/id', usuariosControllers.getById);
 app.get('/usuario/name', usuariosControllers.getByName);
 app.get('/usuarios', usuariosControllers.getAll);
+
+app.post('/usuario', usuariosControllers.create);
+
+app.delete('/usuario', usuariosControllers.remove);
 
 app.listen(PORT, () => {
   console.log('O app está rodando na porta: ', PORT);
