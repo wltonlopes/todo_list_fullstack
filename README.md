@@ -13,7 +13,7 @@ Ela pretende ser manter ultilizando as Stacks já usadas, usando assim Nodejs, M
 Após clonar esse repositório abra com seu editor de código preferido.
 Em seu Mysql Workbench rode os comados do arquivo de texto exemploMysql.txt
 Dentro da pasta /app/backend rode o comando no terminal : npm start.
-Dentro da pasta /app/frontend rode o comando no terminal : npm start
+Dentro da pasta /app/frontend/src rode o comando no terminal : npm start
 
 ## Objetivos já alcançados:
 

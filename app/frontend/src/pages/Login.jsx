@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 import { useNavigate } from "react-router-dom";
@@ -8,16 +8,21 @@ export default function Login() {
 
   const [ name, setName ] = useState("");
   const [ password, setPassword ] = useState("");
-  const [ id, setId ] = useState("");
+  const [ user, setUser ] = useState("");
 
   let navigate = useNavigate();
 
-  const handleClick= async()=>{
-    await fetch(`http://localhost:3005/usuario/name/${name}${password}`)
+  useEffect(()=>{
+    fetch(`http://localhost:3005/usuario/name/${name}${password}`)
     .then(response => response.json())
-    .then(json => setId(json.id));
+    .then(json => setUser(json));
     
-    navigate(`../todo/${id}`, { replace: true });
+    console.log(user)
+  },[ name, password ]);
+
+  const handleClick = () => {
+    const usuario = user[0]
+    navigate(`../todo/${usuario.id}`, { replace: true });
   };
 
   return (
@@ -44,7 +49,7 @@ export default function Login() {
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
+                  <Form.Label>Senha</Form.Label>
                   <Form.Control 
                     type="password" 
                     placeholder="Password"  
@@ -56,7 +61,9 @@ export default function Login() {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                   <Form.Check type="checkbox" label="Salvar senha" />
                 </Form.Group>
-                <Button variant="success" disabled={ name|password ===''| password.length !== 5 ? true : false } onClick={ handleClick }>Acessar</Button>
+                <Button variant="success" disabled={ name|password ===''| password.length !== 5 ? true : false } onClick={ handleClick }>
+                  Acessar
+                </Button>
               </Form>
               </Col>
               <Col></Col>
