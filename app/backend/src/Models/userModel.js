@@ -33,11 +33,11 @@ const getById = async (id) => {
   }
 };
 
-const getByName = async (name) => {
+const getByName = async (n, s) => {
   try {
     const rows = await connection.query(
-      'SELECT * FROM usuarios WHERE nome=?',
-      [name]
+      'SELECT * FROM usuarios WHERE nome=? AND senha=?',
+      [n, s]
     );
     return rows[0];
   } catch (error) {

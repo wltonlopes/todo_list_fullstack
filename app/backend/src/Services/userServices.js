@@ -29,9 +29,11 @@ const getById = async (id) =>{
   }
 };
 
-const getByName = async (nome) =>{
+const getByName = async (id) =>{
   try {
-    const usuario = await userModel.getByName(nome);
+    const s = id.substr(-5);
+    const n = id.substring(0, id.length - 5);
+    const usuario = await userModel.getByName(n, s);
     return usuario;
   } catch (error) {
     console.log(error);

@@ -8,7 +8,7 @@ export default function Router() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/todo" element={<MainTodo />} />
+      <Route path="/todo/:id" element={<MainTodo />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
