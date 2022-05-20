@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <Navbar expand="lg" variant="light" bg="success">
       <Container>
-        <Navbar.Brand href="#">TodoList Ebytr</Navbar.Brand>
+        <Navbar.Brand href="/">TodoList Ebytr</Navbar.Brand>
       </Container>
     </Navbar>
   )
