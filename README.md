@@ -15,10 +15,6 @@ Em seu Mysql Workbench rode os comados do arquivo de texto exemploMysql.txt
 Dentro da pasta /app/backend rode o comando no terminal : npm start.
 Dentro da pasta /app/frontend rode o comando no terminal : npm start
 
-## Instalação:
-
-See https://trac.wildfiregames.com/wiki/Modding_Guide#Howtoinstallmods
-
 ## Objetivos já alcançados:
 
 We could always use another helping hand with this project. There are several ways to help and contribute to the Yayoi mod:
